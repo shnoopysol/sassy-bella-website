@@ -1,56 +1,90 @@
-import Container from '../components/container'
-import MoreStories from '../components/more-stories'
-import HeroPost from '../components/hero-post'
-import Intro from '../components/intro'
-import Layout from '../components/layout'
-import { getAllPosts } from '../lib/api'
-import Head from 'next/head'
-import { CMS_NAME } from '../lib/constants'
-import Post from '../interfaces/post'
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import Head from "next/head";
+import Layout from "../components/layout";
+import Container from "../components/container";
 
-type Props = {
-  allPosts: Post[]
-}
+function index() {
+  const [arrayIndex, setArrayIndex] = useState(0);
+  const thoughts = [1, 2, 3, 4, 5];
 
-export default function Index({ allPosts }: Props) {
-  const heroPost = allPosts[0]
-  const morePosts = allPosts.slice(1)
+  useEffect(() => {
+    const thoughtsInterval = setInterval(() => {
+      setArrayIndex((prev) => (prev + 1) % thoughts.length);
+    }, 2000);
+
+    return () => clearInterval(thoughtsInterval);
+  }, []);
+
   return (
-    <>
+    <div className="min-w-screen min-h-screen bg-pink-100 relative">
       <Layout>
         <Head>
-          <title>{`Next.js Blog Example with ${CMS_NAME}`}</title>
+          <title>{`Bella's Adventures`}</title>
         </Head>
         <Container>
-          <Intro />
-          {heroPost && (
-            <HeroPost
-              title={heroPost.title}
-              coverImage={heroPost.coverImage}
-              date={heroPost.date}
-              author={heroPost.author}
-              slug={heroPost.slug}
-              excerpt={heroPost.excerpt}
-            />
-          )}
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+          <Image
+            src="/assets/glitter_background.svg"
+            fill={true}
+            alt="glitter background"
+            className="object-cover object-center z-0 absolute"
+            priority
+          />
+          <div className="top-0 bottom-0 left-0 right-0 bg-white/50 absolute z-10"></div>
+          <div className="top-0 left-0 bottom-0 right-0 justify-center absolute z-40 mx-auto">
+            <div className="w-full h-full max-w-7xl flex flex-col sm:flex-row justify-center items-center mx-auto py-12">
+              <div className="w-full h-full relative">
+                <Image
+                  src="/assets/thought_bubble_meat.svg"
+                  fill={true}
+                  alt="bella's thoughts"
+                  className={`object-center object-contain hidden ${arrayIndex === 0 && "!block"}`}
+                  priority
+                />
+                <Image
+                  src="/assets/thought_bubble_crown.svg"
+                  fill={true}
+                  alt="bella's thoughts"
+                  className={`object-center object-contain hidden ${arrayIndex === 1 && "!block"}`}
+                  priority
+                />
+                <Image
+                  src="/assets/thought_bubble_icecream.svg"
+                  fill={true}
+                  alt="bella's thoughts"
+                  className={`object-center object-contain hidden ${arrayIndex === 2 && "!block"}`}
+                  priority
+                />
+                <Image
+                  src="/assets/thought_bubble_heart.svg"
+                  fill={true}
+                  alt="bella's thoughts"
+                  className={`object-center object-contain hidden ${arrayIndex === 3 && "!block"}`}
+                  priority
+                />
+                <Image
+                  src="/assets/thought_bubble_beach.svg"
+                  fill={true}
+                  alt="bella's thoughts"
+                  className={`object-center object-contain hidden ${arrayIndex === 4 && "!block"}`}
+                  priority
+                />
+              </div>
+              <div className="w-full h-full relative">
+                <Image
+                  src="/assets/bella_button.svg"
+                  fill
+                  alt="bella description"
+                  className="object-center object-contain"
+                  priority
+                />
+              </div>
+            </div>
+          </div>
         </Container>
       </Layout>
-    </>
-  )
+    </div>
+  );
 }
 
-export const getStaticProps = async () => {
-  const allPosts = getAllPosts([
-    'title',
-    'date',
-    'slug',
-    'author',
-    'coverImage',
-    'excerpt',
-  ])
-
-  return {
-    props: { allPosts },
-  }
-}
+export default index;
