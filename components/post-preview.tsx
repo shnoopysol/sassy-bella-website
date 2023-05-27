@@ -21,12 +21,6 @@ const PostPreview = ({ title, coverImage, date, excerpt, slug }: Props) => {
         <CoverImage slug={slug} title={title} src={coverImage} />
       </div>
       <div className="relative">
-        {/* <Image
-          src="/assets/diary_bg.svg"
-          alt="blog background"
-          fill={true}
-          className="object-center object-cover absolute z-0"
-        /> */}
         <div className="relative p-5 z-10">
           <h3 className="text-3xl mb-3 leading-snug font-semibold font-caveat" style={caveat.style}>
             <Link as={`/posts/${slug}`} href="/posts/[slug]" className="hover:underline">
