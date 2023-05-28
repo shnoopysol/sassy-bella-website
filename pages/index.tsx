@@ -32,7 +32,7 @@ function index() {
           />
           <div className="top-0 bottom-0 left-0 right-0 bg-white/50 absolute z-10"></div>
           <div className="top-0 left-0 bottom-0 right-0 justify-center absolute z-40 mx-auto">
-            <div className="w-full h-full max-w-7xl flex flex-col sm:flex-row justify-center items-center mx-auto py-12">
+            <div className="w-full h-full max-w-7xl flex flex-col sm:flex-row justify-center items-center mx-auto py-16 sm:py-12">
               <div className="w-full h-full relative">
                 <Image
                   src="/assets/thought_bubble_beach.svg"

@@ -1,6 +1,6 @@
 ---
 title: "Bella's Beach Trip"
-excerpt: "I had the best time ever on my recent beach trip! My mom and dad took me and my sister on a fun-filled adventure to the coast. As a Maltese, I love to play and explore, so this was the perfect trip for me."
+excerpt: "I had the best time ever on my recent beach trip! My pawrents took me on a fun-filled adventure to the coast. I love to play and explore, so this was the perfect trip for me."
 coverImage: "/assets/bella_beach.svg"
 date: "2020-03-16T05:35:07.322Z"
 ogImage:

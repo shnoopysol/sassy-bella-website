@@ -1,7 +1,6 @@
 import DateFormatter from "./date-formatter";
 import CoverImage from "./cover-image";
 import Link from "next/link";
-import Image from "next/image";
 import { Caveat } from "next/font/google";
 
 const caveat = Caveat({ subsets: ['latin'] })
