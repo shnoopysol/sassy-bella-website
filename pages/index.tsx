@@ -35,38 +35,44 @@ function index() {
             <div className="w-full h-full max-w-7xl flex flex-col sm:flex-row justify-center items-center mx-auto py-12">
               <div className="w-full h-full relative">
                 <Image
-                  src="/assets/thought_bubble_meat.svg"
+                  src="/assets/thought_bubble_beach.svg"
                   fill={true}
                   alt="bella's thoughts"
-                  className={`object-center object-contain hidden ${arrayIndex === 0 && "!block"}`}
-                  priority
-                />
-                <Image
-                  src="/assets/thought_bubble_crown.svg"
-                  fill={true}
-                  alt="bella's thoughts"
-                  className={`object-center object-contain hidden ${arrayIndex === 1 && "!block"}`}
-                  priority
-                />
-                <Image
-                  src="/assets/thought_bubble_icecream.svg"
-                  fill={true}
-                  alt="bella's thoughts"
-                  className={`object-center object-contain hidden ${arrayIndex === 2 && "!block"}`}
-                  priority
+                  className={`object-center object-contain absolute z-0 ${
+                    arrayIndex === 4 && "z-50"
+                  }`}
                 />
                 <Image
                   src="/assets/thought_bubble_heart.svg"
                   fill={true}
                   alt="bella's thoughts"
-                  className={`object-center object-contain hidden ${arrayIndex === 3 && "!block"}`}
-                  priority
+                  className={`object-center object-contain absolute z-0 ${
+                    arrayIndex === 3 && "z-50"
+                  }`}
                 />
                 <Image
-                  src="/assets/thought_bubble_beach.svg"
+                  src="/assets/thought_bubble_icecream.svg"
                   fill={true}
                   alt="bella's thoughts"
-                  className={`object-center object-contain hidden ${arrayIndex === 4 && "!block"}`}
+                  className={`object-center object-contain absolute z-0 ${
+                    arrayIndex === 2 && "z-50"
+                  }`}
+                />
+                <Image
+                  src="/assets/thought_bubble_crown.svg"
+                  fill={true}
+                  alt="bella's thoughts"
+                  className={`object-center object-contain absolute z-0 ${
+                    arrayIndex === 1 && "z-50"
+                  }`}
+                />
+                <Image
+                  src="/assets/thought_bubble_meat.svg"
+                  fill={true}
+                  alt="bella's thoughts"
+                  className={`object-center object-contain absolute z-0${
+                    arrayIndex === 0 && "z-50"
+                  }`}
                   priority
                 />
               </div>
