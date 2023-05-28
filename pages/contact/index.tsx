@@ -20,7 +20,7 @@ function Index() {
               height={500}
               className="mx-auto object-center object-contain"
             />
-            <h2 className="text-sm">
+            <h2 className="text-lg">
               You can email my pawrents at <span className="underline">imsassybella@gmail.com</span>
             </h2>
           </div>

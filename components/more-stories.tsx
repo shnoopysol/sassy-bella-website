@@ -19,16 +19,6 @@ const MoreStories = ({ posts }: Props) => {
             excerpt={post.excerpt}
           />
         ))}
-        {posts.map((post) => (
-          <PostPreview
-            key={post.slug}
-            title={post.title}
-            coverImage={post.coverImage}
-            date={post.date}
-            slug={post.slug}
-            excerpt={post.excerpt}
-          />
-        ))}
       </div>
     </section>
   );
